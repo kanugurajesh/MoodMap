@@ -31,7 +31,7 @@ const MobileNavbar = () => {
           href="/"
           className="flex items-center font-black text-xl hover:scale-105 transition-all ease-in-out duration-300"
         >
-          <h1 className="text-yellow-500 text-4xl mr-1">E</h1>
+          <h1 className="text-blue-500 text-4xl mr-1">E</h1>
           <h1 className="">moTrack</h1>
         </Link>
         <div
@@ -56,7 +56,7 @@ const MobileNavbar = () => {
         </div>
       </nav>
       <div
-        className={`fixed top-0 h-screen w-[250px] bg-yellow-500 ${
+        className={`fixed top-0 h-screen w-[250px] bg-blue-500 ${
           activeMenu ? 'left-0' : 'left-[-300px]'
         } transition-all ease-in-out duration-700 flex items-center justify-center font-black text-lg text-white`}
       >

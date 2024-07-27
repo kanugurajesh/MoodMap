@@ -28,7 +28,7 @@ export default function Home() {
           </h1>
         </div>
         <Link href="/home">
-          <button className="p-3 bg-yellow-500 rounded-md hover:text-yellow-500 text-white hover:bg-white border-2 border-yellow-500 transition-all ease-in-out duration-300 font-bold">
+          <button className="p-3 bg-blue-500 rounded-md hover:text-blue-500 text-white hover:bg-white border-2 border-blue-500 transition-all ease-in-out duration-300 font-bold">
             Get Started
           </button>
         </Link>
