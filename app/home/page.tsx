@@ -6,9 +6,12 @@ import { RootState } from '@/lib/store'
 import Quiz from '@/components/Quiz'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
+// import { useUser } from '@clerk/nextjs'
 // import { useAuth } from '@clerk/nextjs'
 
 export default function Home() {
+
+  // const { user } = useUser()
 
   // useEffect(() => {
   //   console.log(userId)

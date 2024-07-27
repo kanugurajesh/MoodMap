@@ -11,6 +11,9 @@ datasource db {
 model User {
   id     Int     @id @default(autoincrement())
   userId String  @unique
+  name   String? @default("")
+  email  String? @unique
+  imageUrl  String? @default("")
   scores Score[]
 }
 

@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 export async function POST(request: NextRequest) {
     
   // parsing userId from request json
-  const { userId } = await request.json()
+  const { userId, name, email, imageUrl} = await request.json()
 
   // find user by userId
   const user = await prisma.user.findUnique({
@@ -24,6 +24,9 @@ export async function POST(request: NextRequest) {
   const result = await prisma.user.create({
     data: {
       userId: userId,
+      name: name,
+      email: email,
+      imageUrl: imageUrl,
     },
   })
 

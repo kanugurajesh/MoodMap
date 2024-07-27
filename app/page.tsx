@@ -3,21 +3,28 @@ import { CarouselComponent } from '@/components/Carousal'
 import Link from 'next/link'
 import { useAuth } from '@clerk/nextjs'
 import { useEffect } from 'react'
+import { useUser } from '@clerk/nextjs'
 
 export default function Home() {
   const { userId } = useAuth()
+  const { user } = useUser()
 
   useEffect(() => {
-    if (userId != null) {
+    if (userId != null && user != null) {
       const sendRequest = async () => {
         const result = await fetch('/api/user', {
           method: 'POST',
-          body: JSON.stringify({ userId }),
+          body: JSON.stringify({
+            userId,
+            name: user.fullName,
+            email: user.primaryEmailAddress?.emailAddress,
+            imageUrl: user.imageUrl ? user.imageUrl : 'https://picsum.photos/200',
+          }),
         })
       }
       sendRequest()
     }
-  }, [userId])
+  }, [userId, user])
 
   return (
     <main className="px-10 flex justify-between items-center mt-20 max-tablet:flex-col-reverse max-tablet:gap-10 mb-10">
