@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import { NextRequest, NextResponse } from 'next/server'
+import { encryptPassword } from '@/utils/hash'
 
 const prisma = new PrismaClient()
 
@@ -11,7 +12,7 @@ export async function POST(request: NextRequest) {
   // find user by userId
   const user = await prisma.user.findUnique({
     where: {
-      userId: userId,
+      userId: encryptPassword(userId),
     },
   })
 
@@ -23,10 +24,10 @@ export async function POST(request: NextRequest) {
   //   creating the user
   const result = await prisma.user.create({
     data: {
-      userId: userId,
-      name: name,
-      email: email,
-      imageUrl: imageUrl,
+      userId: encryptPassword(userId),
+      name: encryptPassword(name),
+      email: encryptPassword(email),
+      imageUrl: encryptPassword(imageUrl),
     },
   })
 
