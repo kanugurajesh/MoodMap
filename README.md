@@ -1,4 +1,4 @@
-# EmoTrack
+# MoodMap
 
 EmoTrack is an app designed to track depression and provide remedies to patients. 🌟 Depression often begins with subtle symptoms and gradually intensifies. Many people may not even realize they're experiencing it until it's severe, potentially leading to serious consequences, including suicide. 😔
 
