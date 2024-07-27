@@ -1,8 +1,25 @@
 'use client'
 import { CarouselComponent } from '@/components/Carousal'
 import Link from 'next/link'
+import { useAuth } from '@clerk/nextjs'
+import { useEffect } from 'react'
 
 export default function Home() {
+  const { userId } = useAuth()
+
+  useEffect(() => {
+    if (userId != null) {
+      const sendRequest = async () => {
+        const result = await fetch('/api/user', {
+          method: 'POST',
+          body: JSON.stringify({ userId }),
+        })
+      }
+
+      sendRequest()
+    }
+  }, [userId])
+
   return (
     <main className="px-10 flex justify-between items-center mt-20 max-tablet:flex-col-reverse max-tablet:gap-10 mb-10">
       <div className="flex flex-col gap-10 max-tablet:ml-14 max-mobile:max-w-72 max-mobile:ml-0 ">

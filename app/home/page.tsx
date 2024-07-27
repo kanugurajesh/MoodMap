@@ -6,14 +6,13 @@ import { RootState } from '@/lib/store'
 import Quiz from '@/components/Quiz'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { useAuth } from '@clerk/nextjs'
+// import { useAuth } from '@clerk/nextjs'
 
 export default function Home() {
-  const { userId } = useAuth()
 
-  useEffect(() => {
-    console.log(userId)
-  }, [userId])
+  // useEffect(() => {
+  //   console.log(userId)
+  // }, [userId])
 
   // useEffect(() => {
   //   if (user) {

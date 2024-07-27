@@ -1,3 +1,5 @@
+'use client'
+
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Button } from '@/components/ui/button'
@@ -5,7 +7,10 @@ import { useState, useEffect } from 'react'
 import { PHQ9 } from '@/db/questions'
 import { AlertDialogBox } from '@/components/AlertDialogBox'
 import { useAppDispatch } from '@/lib/hooks'
-import { incrementByAmount, initializeCount } from '@/lib/features/counter/counterSlice'
+import {
+  incrementByAmount,
+  initializeCount,
+} from '@/lib/features/counter/counterSlice'
 import { Badge } from '@/components/ui/badge'
 import sendGemini from '@/lib/sendGemini'
 import { updateValue } from '@/lib/features/textarea/textareaSlice'
@@ -13,16 +18,18 @@ import { incrementScore } from '@/lib/features/score/scoreSlice'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/lib/store'
 import { useRouter } from 'next/navigation'
+import { useAuth } from '@clerk/nextjs'
 
 const Quiz = () => {
   // declaring the use states
   const router = useRouter()
+  const { userId } = useAuth()
   const [count, setCount] = useState<number>(0)
   const [answers, setAnswers] = useState<number[]>(Array(PHQ9.length).fill(0))
   const [selectedValue, setSelectedValue] = useState<number>(0)
 
   // getting the score from the store
-  const score = useSelector((state: RootState) => state.score.value)
+  // const score = useSelector((state: RootState) => state.score.value)
 
   // getting the dispatch function
   const dispatch = useAppDispatch()
@@ -50,7 +57,7 @@ const Quiz = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ score: finalScore }),
+      body: JSON.stringify({ score: finalScore, userId }),
     })
     const data = await response.json()
   }
@@ -66,7 +73,8 @@ const Quiz = () => {
       setCount(count + 1)
     } else {
       dispatch(initializeCount(0))
-      const sum = newAnswers.reduce((acc, curr) => acc + curr, 0) + selectedValue
+      const sum =
+        newAnswers.reduce((acc, curr) => acc + curr, 0) + selectedValue
       dispatch(incrementScore(sum))
       handPrisma(sum - selectedValue)
       router.push('/response')
