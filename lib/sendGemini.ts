@@ -2,6 +2,7 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai'
 
+// The below function is used to send a message to the gemini api and the output can be controlled using the tokens passed to it
 const sendGemini = async (message: string, tokens: number) => {
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string)
   const model = genAI.getGenerativeModel({

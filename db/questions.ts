@@ -1,3 +1,5 @@
+// This file contains all the phq-9 standard questionairre for depression analysis
+
 const PHQ9 = [
   { question: 'Little interest or pleasure in doing things', answer: 0 },
   { question: 'Feeling down, depressed, or hopeless', answer: 0 },
