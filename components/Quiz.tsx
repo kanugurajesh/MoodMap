@@ -15,10 +15,9 @@ import { Badge } from '@/components/ui/badge'
 import sendGemini from '@/lib/sendGemini'
 import { updateValue } from '@/lib/features/textarea/textareaSlice'
 import { incrementScore } from '@/lib/features/score/scoreSlice'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/lib/store'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@clerk/nextjs'
+import { NextResponse } from 'next/server'
 
 const Quiz = () => {
   // declaring the use states
@@ -27,9 +26,6 @@ const Quiz = () => {
   const [count, setCount] = useState<number>(0)
   const [answers, setAnswers] = useState<number[]>(Array(PHQ9.length).fill(0))
   const [selectedValue, setSelectedValue] = useState<number>(0)
-
-  // getting the score from the store
-  // const score = useSelector((state: RootState) => state.score.value)
 
   // getting the dispatch function
   const dispatch = useAppDispatch()
@@ -52,6 +48,7 @@ const Quiz = () => {
   }
 
   const handPrisma = async (finalScore: number) => {
+    
     const response = await fetch('/api/graph', {
       method: 'POST',
       headers: {
@@ -59,7 +56,14 @@ const Quiz = () => {
       },
       body: JSON.stringify({ score: finalScore, userId }),
     })
-    const data = await response.json()
+
+    if (response.ok) {
+      console.log('Score added to the database')
+    } else {
+      console.log('Error adding score to the database')
+    }
+
+    return NextResponse.json({ success: true })
   }
 
   // function to handle the submit button

@@ -9,6 +9,7 @@ import Markdown from 'react-markdown'
 import { Card } from '@/components/ui/card'
 import sendGemini from '@/lib/sendGemini'
 import toast from 'react-hot-toast'
+import { useAuth } from '@clerk/nextjs'
 
 const Line = dynamic(() => import('react-chartjs-2').then((mod) => mod.Line), {
   ssr: false,
@@ -24,6 +25,7 @@ const LineChart = () => {
   const [labels, setLabels] = useState<string[]>([])
   const [values, setValues] = useState<number[]>([])
   const [response, setResponse] = useState<string>('')
+  const { userId } = useAuth()
   const chartRef = useRef(null)
 
   // The below function is used to download the image of the react-charts graph
@@ -46,7 +48,13 @@ const LineChart = () => {
     const fetchData = async () => {
       toast.dismiss()
       toast.loading('Loading data...')
-      const response = await fetch('/api/graph')
+      const response = await fetch('/api/graph', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: userId }),
+      })
       const data = await response.json()
 
       if (data === 'error') {
