@@ -8,7 +8,17 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+model User {
+  id     Int     @id @default(autoincrement())
+  userId String  @unique
+  scores Score[]
+}
+
 model Score {
-  date  DateTime @id @default(now())
-  value Int      @default(0)
+  date   DateTime @default(now())
+  value  Int      @default(0)
+  userId Int
+  user   User     @relation(fields: [userId], references: [id])
+
+  @@id([date, userId])
 }
