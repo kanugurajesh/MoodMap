@@ -30,35 +30,35 @@ const Navbar = () => {
               onClick={() => setActiveTab(1)}
               className="flex items-center font-black text-2xl hover:scale-105 transition-all ease-in-out duration-300"
             >
-              <h1 className="text-yellow-500 text-6xl max-laptop:text-5xl mr-1">
-                E
+              <h1 className="text-blue-500 text-5xl max-laptop:text-5xl mr-1">
+                M
               </h1>
-              <h1 className="text-4xl max-laptop:text-3xl">motrack</h1>
+              <h1 className="text-4xl max-laptop:text-3xl">ood<span className='text-blue-500 text-5xl'>M</span>ap</h1>
             </Link>
             <div className="flex gap-10 font-bold relative">
               <Link
                 href="/"
                 onClick={() => setActiveTab(1)}
-                className="hover:text-yellow-500 transition-all ease-in-out duration-300 hover:scale-105"
+                className="hover:text-blue-500 transition-all ease-in-out duration-300 hover:scale-105"
               >
                 Home
               </Link>
               <Link
                 href="/about"
                 onClick={() => setActiveTab(2)}
-                className="hover:text-yellow-500 transition-all ease-in-out duration-300 hover:scale-105"
+                className="hover:text-blue-500 transition-all ease-in-out duration-300 hover:scale-105"
               >
                 About
               </Link>
               <Link
                 href="/services"
                 onClick={() => setActiveTab(3)}
-                className="hover:text-yellow-500 transition-all ease-in-out duration-300 hover:scale-105"
+                className="hover:text-blue-500 transition-all ease-in-out duration-300 hover:scale-105"
               >
                 Services
               </Link>
               <div
-                className={`absolute w-12 h-1 bg-yellow-500 top-6 transition-all ease-in-out duration-300 ${
+                className={`absolute w-12 h-1 bg-blue-500 top-6 transition-all ease-in-out duration-300 ${
                   (activeTab == 1 && 'left-0') ||
                   (activeTab == 2 && 'left-[87px]') ||
                   (activeTab == 3 && 'left-[185px]')
@@ -80,7 +80,7 @@ const Navbar = () => {
 
               <Link
                 href="/contact"
-                className="p-3 bg-yellow-500 rounded-md hover:text-yellow-500 text-white hover:bg-white border-2 border-yellow-500 transition-all ease-in-out duration-300"
+                className="p-3 bg-blue-500 rounded-md hover:text-blue-500 text-white hover:bg-white border-2 border-blue-500 transition-all ease-in-out duration-300"
               >
                 Contact Us
               </Link>

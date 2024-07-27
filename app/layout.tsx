@@ -17,7 +17,7 @@ const fontSans = FontSans({
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Emotrack',
+  title: 'MoodMap',
   description: 'An application to monitor mental health',
 }
 
