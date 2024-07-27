@@ -31,8 +31,8 @@ const MobileNavbar = () => {
           href="/"
           className="flex items-center font-black text-xl hover:scale-105 transition-all ease-in-out duration-300"
         >
-          <h1 className="text-blue-500 text-4xl mr-1">E</h1>
-          <h1 className="">moTrack</h1>
+          <h1 className="text-blue-500 text-4xl mr-1">M</h1>
+          <h1 className="">oodMap</h1>
         </Link>
         <div
           className="flex flex-col gap-1 cursor-pointer"
