@@ -37,7 +37,7 @@ const Response = () => {
   return (
     <main>
       <div className="mt-10 flex flex-col gap-5">
-        <div className="flex items-center justify-center flex-col gap-4">
+        <div className="flex items-center justify-center gap-4">
           <Link
             href="/dashboard"
             className="bg-blue-500 p-4 font-bold rounded-md text-white hover:bg-white hover:text-blue-500 transition-all ease-in-out duration-300 border-2 border-blue-500"

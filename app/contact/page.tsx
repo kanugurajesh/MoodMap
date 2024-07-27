@@ -229,7 +229,7 @@ export default function Contact() {
         <div>
           {/* @ts-ignore */}
           <button
-            className="w-full font-bold bg-black text-white px-5 py-3 rounded-md border-2 transition ease-in-out mb-10 lg:mb-0"
+            className="w-full font-bold bg-blue-500 text-white px-5 py-3 rounded-md border-2 transition border-blue-500 ease-in-out mb-10 lg:mb-0 hover:bg-white hover:text-blue-500"
             onClick={() => handleSubmit()}
           >
             {loading ? <BeatLoader size={8} color="white" /> : "Send Message"}
