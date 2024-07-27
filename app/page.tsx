@@ -18,7 +18,9 @@ export default function Home() {
             userId,
             name: user.fullName,
             email: user.primaryEmailAddress?.emailAddress,
-            imageUrl: user.imageUrl ? user.imageUrl : 'https://picsum.photos/200',
+            imageUrl: user.imageUrl
+              ? user.imageUrl
+              : 'https://picsum.photos/200',
           }),
         })
       }
