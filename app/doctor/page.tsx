@@ -15,8 +15,6 @@ const page = () => {
     }
   }, [user])
 
-  //   console.log(user?.username)
-
   return (
     <main>
       <div>

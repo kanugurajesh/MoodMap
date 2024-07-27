@@ -2,31 +2,10 @@
 
 import { Progress } from '@/components/ui/progress'
 import { GeminiBot } from '@/components/Gemini-Interface'
-import { RootState } from '@/lib/store'
 import Quiz from '@/components/Quiz'
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
-// import { useUser } from '@clerk/nextjs'
-// import { useAuth } from '@clerk/nextjs'
 
 export default function Home() {
-
-  // const { user } = useUser()
-
-  // useEffect(() => {
-  //   console.log(userId)
-  // }, [userId])
-
-  // useEffect(() => {
-  //   if (user) {
-  //     // @ts-ignore
-  //     console.log(user.firstName)
-  //     console.log('User is signed in')
-  //   } else {
-  //     console.log('User is not signed in')
-  //   }
-  // }, [])
-
   // @ts-ignore
   const progress = useSelector((state: RootState) => state.counter.value)
 

@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
   // find user by userId
   const user = await prisma.user.findUnique({
     where: {
-      userId: encryptPassword(userId),
+      userId: userId,
     },
   })
 
@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
   //   creating the user
   const result = await prisma.user.create({
     data: {
-      userId: encryptPassword(userId),
+      userId: userId,
       name: encryptPassword(name),
       email: encryptPassword(email),
       imageUrl: encryptPassword(imageUrl),

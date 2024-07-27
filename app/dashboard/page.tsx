@@ -22,6 +22,7 @@ const updateDate = (date: any) => {
 }
 
 const LineChart = () => {
+  
   const [labels, setLabels] = useState<string[]>([])
   const [values, setValues] = useState<number[]>([])
   const [response, setResponse] = useState<string>('')
@@ -46,8 +47,10 @@ const LineChart = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+
       toast.dismiss()
       toast.loading('Loading data...')
+
       const response = await fetch('/api/graph', {
         method: 'POST',
         headers: {
@@ -55,7 +58,10 @@ const LineChart = () => {
         },
         body: JSON.stringify({ userId: userId }),
       })
+
       const data = await response.json()
+
+      console.log(data)
 
       if (data === 'error') {
         toast.dismiss()
