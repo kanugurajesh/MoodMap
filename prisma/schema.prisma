@@ -17,8 +17,8 @@ model User {
 model Score {
   date   DateTime @default(now())
   value  Int      @default(0)
-  userId Int
-  user   User     @relation(fields: [userId], references: [id])
+  userId String
+  user   User     @relation(fields: [userId], references: [userId])
 
   @@id([date, userId])
 }
