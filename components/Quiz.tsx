@@ -3,7 +3,7 @@
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Button } from '@/components/ui/button'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { PHQ9 } from '@/db/questions'
 import { AlertDialogBox } from '@/components/AlertDialogBox'
 import { useAppDispatch } from '@/lib/hooks'
@@ -37,33 +37,36 @@ const Quiz = () => {
 
   // function to handle the next button
   const handleNext = () => {
-    setCount(count + 1)
+    setCount((prevCount) => prevCount + 1)
     incrementBy(10)
   }
 
   // function to handle the previous button
   const handlePrev = () => {
-    setCount(count - 1)
+    setCount((prevCount) => prevCount - 1)
     incrementBy(-10)
   }
 
   const handPrisma = async (finalScore: number) => {
-    
-    const response = await fetch('/api/graph', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ score: finalScore, userId }),
-    })
+    try {
+      const response = await fetch('/api/graph', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ score: finalScore, userId }),
+      })
 
-    if (response.ok) {
-      console.log('Score added to the database')
-    } else {
-      console.log('Error adding score to the database')
+      if (response.ok) {
+        console.log('Score added to the database')
+      } else {
+        console.log('Error adding score to the database')
+      }
+
+      return NextResponse.json({ success: true })
+    } catch (error) {
+      console.error('Error:', error)
     }
-
-    return NextResponse.json({ success: true })
   }
 
   // function to handle the submit button
@@ -74,13 +77,12 @@ const Quiz = () => {
     incrementBy(10)
 
     if (count < PHQ9.length - 1) {
-      setCount(count + 1)
+      setCount((prevCount) => prevCount + 1)
     } else {
       dispatch(initializeCount(0))
-      const sum =
-        newAnswers.reduce((acc, curr) => acc + curr, 0) + selectedValue
+      const sum = newAnswers.reduce((acc, curr) => acc + curr, 0) + selectedValue
       dispatch(incrementScore(sum))
-      handPrisma(sum - selectedValue)
+      await handPrisma(sum - selectedValue)
       router.push('/response')
     }
   }

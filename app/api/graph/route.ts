@@ -34,8 +34,6 @@ export async function POST(request: NextRequest) {
       value: Number(decryptPassword(item.value)),
     }));
 
-    console.log(decryptedResults)
-
     return NextResponse.json(decryptedResults);
   }
 

@@ -61,8 +61,6 @@ const LineChart = () => {
 
       const data = await response.json()
 
-      console.log(data)
-
       if (data === 'error') {
         toast.dismiss()
         toast.error('An error occurred while fetching the data.')
