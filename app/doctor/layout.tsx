@@ -13,6 +13,7 @@ export default function RootLayout({
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // setting up a duplicate values for doctor authentication / authorization
     if (username === 'admin' && password === 'password') {
       setIsLoggedIn(true);
     } else {

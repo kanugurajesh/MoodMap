@@ -6,6 +6,7 @@ import Image from 'next/image'
 // use uuid to generate unique ids
 import { v4 as uuid } from 'uuid'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 // creating the interface of the user field
 interface userI {
