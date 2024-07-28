@@ -13,7 +13,7 @@ export default function AboutPage() {
         />
         <p className="mt-5">
           In India, the shortage of mental health professionals is severe, with
-          only 0.75 psychiatrists per 100,000 patients, well below the WHO's
+          only 0.75 psychiatrists per 100,000 patients, well below the WHO
           recommendation of at least 3 per 100,000. 🧠 This significant gap
           underscores the urgent need for innovative solutions to improve mental
           health care accessibility and support.
@@ -28,7 +28,7 @@ export default function AboutPage() {
           Additionally, MoodMap facilitates affordable psychiatric monitoring
           🩺. By allowing a single psychiatrist to remotely monitor multiple
           patients, the app reduces consultancy costs and enhances the
-          psychiatrist's ability to manage multiple patients efficiently. This
+          psychiatrist ability to manage multiple patients efficiently. This
           feature makes mental health care more accessible and cost-effective.
         </p>
         <p>
