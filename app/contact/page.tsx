@@ -24,6 +24,7 @@ export default function Contact() {
     return re.test(name);
   };
 
+  // The below function is used to validate the form
   const validateForm = () => {
     if (!validateName(name)) {
       toast.error("Please enter the valid name");

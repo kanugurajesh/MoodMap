@@ -5,6 +5,15 @@ import dynamic from 'next/dynamic'
 import 'chart.js/auto'
 import html2canvas from 'html2canvas'
 import toast from 'react-hot-toast'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 
 // The below one is used to dynamically import the chart
 const Line = dynamic(() => import('react-chartjs-2').then((mod) => mod.Line), {
@@ -38,7 +47,7 @@ export default function Page({ params }: { params: { userId: string } }) {
   useEffect(() => {
     const sendResult = async () => {
       toast.dismiss()
-      toast.loading('toast Loading...')
+      toast.loading('Data Loading...')
       const result = await fetch(`/api/graph`, {
         method: 'POST',
         body: JSON.stringify({ userId: params.userId }),
@@ -102,7 +111,7 @@ export default function Page({ params }: { params: { userId: string } }) {
   }
 
   return (
-    <main className="flex items-center justify-center w-full">
+    <main className="flex flex-col items-center justify-center w-full gap-8">
       <div className="flex flex-col items-center justify-between w-full">
         <div className="w-full flex flex-col items-center gap-10 mt-10">
           <h1 className="font-bold text-xl">Mood Analysis</h1>
@@ -117,6 +126,23 @@ export default function Page({ params }: { params: { userId: string } }) {
           </button>
         </div>
       </div>
+      <Table>
+        <TableCaption>Mood Records</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Date</TableHead>
+            <TableHead className="text-right">Score</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {labels.map((label, index) => (
+            <TableRow key={index}>
+              <TableCell className="font-medium">{label}</TableCell>
+              <TableCell className="text-right">{values[index]}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </main>
   )
 }
