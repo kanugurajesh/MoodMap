@@ -59,6 +59,17 @@ By bridging the gap between mental health needs and available resources, MoodMap
    npm run dev
    ```
 
+## TechStack
+
+1. Next.js
+2. Typescript
+3. Tailwind.css
+4. Postgres
+5. Prisma
+6. Docker
+7. Shadcdn-ui
+8. Clerk
+
 ## Screenshots
 
 ![Screenshot 2024-07-28 101039](https://github.com/user-attachments/assets/460a129b-6a60-45ba-8209-dd446fe1e6f7)
