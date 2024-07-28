@@ -18,7 +18,7 @@ export function CarouselComponent() {
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <img src="/mentalhealth1.jpg" alt="mental health" className="w-full h-full" />
+                  <img src={`/slider/mentalhealth${index+1}.jpg`} alt="mental health" className="w-full h-full" />
                 </CardContent>
               </Card>
             </div>

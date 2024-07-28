@@ -1,10 +1,12 @@
-"use client"
+'use client'
 
 import { useEffect, useState } from 'react'
 
 export default function Page({ params }: { params: { userId: string } }) {
+  // creating a state to store the scores
   const [data, setData] = useState(null)
 
+    //  The below function picks up the userId from the url and parses it and makes a request to the backend to get all the scores
   useEffect(() => {
     const sendResult = async () => {
       const result = await fetch(`/api/graph`, {
@@ -16,10 +18,6 @@ export default function Page({ params }: { params: { userId: string } }) {
     }
     sendResult()
   }, [params])
-
-  useEffect(() => {
-    console.log(data)
-  }, [data])
 
   return (
     <main>
