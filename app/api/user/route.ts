@@ -43,6 +43,5 @@ export async function GET() {
       imageUrl: decryptPassword(user.imageUrl as string),
     }
   })
-  console.log(decryptedUsers)
   return NextResponse.json(decryptedUsers)
 }

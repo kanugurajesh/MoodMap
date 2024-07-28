@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+// use uuid to generate unique ids
+import { v4 as uuid } from 'uuid'
+import Link from 'next/link'
 
 // creating the interface of the user field
 interface userI {
@@ -9,6 +12,7 @@ interface userI {
   imageUrl: string
   name: string
   email: string
+  userId: string
 }
 
 const page = () => {
@@ -24,17 +28,19 @@ const page = () => {
   }, [])
 
   useEffect(() => {
-    console.log(users)
   }, [users])
 
   return (
-    <main className='flex flex-col gap-2 justify-center items-center'>
-      <h1 className='font-bold text-2xl mt-5'>Check your patients</h1>
-      <div className="mt-10 flex flex-wrap gap-4">
-        {users.length > 0 ? (
-          users.map((user: userI) => (
+    <main className="flex flex-col gap-2 justify-center items-center">
+      <h1 className="font-bold text-2xl mt-5">Check your patients</h1>
+      {users.length > 0 ? (
+        users.map((user: userI) => (
+          <Link
+            href={`/doctor/${users[0]?.userId}`}
+            className="mt-10 flex flex-wrap gap-4"
+          >
             <div
-              key={user.id}
+              key={uuid()}
               className="p-4 bg-blue-500 text-white w-fit flex flex-col justify-center items-center gap-4 rounded-md border-2 border-blue-500 hover:bg-white hover:text-blue-500 transition-all ease-in-out duration-300 cursor-pointer"
             >
               <Image
@@ -52,11 +58,11 @@ const page = () => {
                 <p>{user.email}</p>
               </div>
             </div>
-          ))
-        ) : (
-          <p>No users found</p>
-        )}
-      </div>
+          </Link>
+        ))
+      ) : (
+        <p>No users found</p>
+      )}
     </main>
   )
 }
