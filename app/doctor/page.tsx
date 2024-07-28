@@ -28,8 +28,9 @@ const page = () => {
   }, [users])
 
   return (
-    <main>
-      <div className='mt-5'>
+    <main className='flex flex-col gap-2 justify-center items-center'>
+      <h1 className='font-bold text-2xl mt-5'>Connect with your patients</h1>
+      <div className="mt-10 flex flex-wrap gap-4">
         {users.length > 0 ? (
           users.map((user: userI) => (
             <div
