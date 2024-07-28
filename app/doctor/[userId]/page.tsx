@@ -4,13 +4,14 @@ import { useEffect, useState, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import 'chart.js/auto'
 import html2canvas from 'html2canvas'
-import Markdown from 'react-markdown'
 import toast from 'react-hot-toast'
 
+// The below one is used to dynamically import the chart
 const Line = dynamic(() => import('react-chartjs-2').then((mod) => mod.Line), {
   ssr: false,
 })
 
+// The below function is used to update time
 const updateDate = (date: any) => {
   const newDate = new Date(date)
   const formattedDate = newDate.toISOString().split('T')[0]
@@ -18,13 +19,11 @@ const updateDate = (date: any) => {
 }
 
 export default function Page({ params }: { params: { userId: string } }) {
-  // creating a state to store the scores
-  const [data, setData] = useState(null)
   const [labels, setLabels] = useState<string[]>([])
   const [values, setValues] = useState<number[]>([])
-  const [response, setResponse] = useState<string>('')
   const chartRef = useRef(null)
 
+  // The below function is used to download the graph
   const downloadImage = () => {
     // @ts-ignore
     html2canvas(chartRef.current).then((canvas) => {
@@ -33,11 +32,6 @@ export default function Page({ params }: { params: { userId: string } }) {
       link.download = 'chart.png'
       link.click()
     })
-  }
-
-  // The below function set's the resposne
-  const slowResponse = (response: string) => {
-    setResponse(response)
   }
 
   //  The below function picks up the userId from the url and parses it and makes a request to the backend to get all the scores
@@ -90,8 +84,6 @@ export default function Page({ params }: { params: { userId: string } }) {
       setLabels(labels1)
       // @ts-ignore
       setValues(values1)
-
-      setData(data)
     }
     sendResult()
   }, [params])
