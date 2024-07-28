@@ -12,36 +12,32 @@ export default function AboutPage() {
           height={100}
         />
         <p className="mt-5">
-          moodmap is an app designed to track depression and provide remedies
-          to patients. 🌟 Depression often begins with subtle symptoms and
-          gradually intensifies. Many people may not even realize they&apos;re
-          experiencing it until it&apos;s severe, potentially leading to serious
-          consequences, including suicide. 😔
+          In India, the shortage of mental health professionals is severe, with
+          only 0.75 psychiatrists per 100,000 patients, well below the WHO's
+          recommendation of at least 3 per 100,000. 🧠 This significant gap
+          underscores the urgent need for innovative solutions to improve mental
+          health care accessibility and support.
         </p>
         <p>
-          However, depression has a straightforward solution: early treatment.
-          If individuals can identify depression in its early stages and seek
-          proper care, it can be easily prevented. 🛡️ Unfortunately, many
-          can&apos;t afford psychologists, don&apos;t have access to them, or
-          hesitate to seek help without confirmation or proof. 💸🚫
+          MoodMap is a pioneering application designed to address this gap by
+          enabling daily depression tracking 📊 using the PHQ-9 test. The app
+          provides personalized feedback 🤖 through the Gemini model, offering
+          tailored advice and support to users based on their daily assessments.
         </p>
         <p>
-          That&apos;s why I built moodmap. This app helps users take a standard
-          PHQ-9 test to understand their mental condition. 📋 It also features a
-          Gemini bot for asking questions, making it easier for people to get
-          the support they need. 🤖💬
+          Additionally, MoodMap facilitates affordable psychiatric monitoring
+          🩺. By allowing a single psychiatrist to remotely monitor multiple
+          patients, the app reduces consultancy costs and enhances the
+          psychiatrist's ability to manage multiple patients efficiently. This
+          feature makes mental health care more accessible and cost-effective.
         </p>
         <p>
-          🌟 I have added a dashboard where users can easily track their PHQ-9
-          scores over time and download their charts. Personalized feedback is
-          provided based on their past scores. Additionally, there is a chat
-          feature that offers guidance to improve mental health based on
-          previous scores. 💬
-        </p>
-        <p>
-          📞 Finally, I have included a contact form so users can reach out to
-          authorities in case of emergencies. The app is secured with Clerk Auth
-          and boasts a responsive user interface for easy navigation. 🛡️🔒
+          MoodMap aims to make a significant impact by ensuring timely and
+          adequate support for patients through critical condition alerts 🚨 and
+          personalized advice 💬. By leveraging technology to bridge the gap
+          between mental health needs and resources, MoodMap aspires to build a
+          supportive community 🤝, making mental health care more scalable and
+          effective in India. 🌍
         </p>
       </Card>
     </div>
