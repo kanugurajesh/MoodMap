@@ -80,23 +80,33 @@ export default function ServicesPage() {
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/chat-gemini.png"
+          src="/services/phq.png"
           alt="chat gemini"
           width={400}
           height={400}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>This is a chat application where users can ask questions related to their mental health. The Gemini knows your complete data about your health</p>
+        <p className='font-semibold'>This element is used to take the test from the user to track his depression</p>
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/clerk-auth.png"
+          src="/services/gemini.png"
           alt="clerk auth"
           width={400}
           height={400}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>Clerk auth makes your app secure and you can easily manage it.</p>
+        <p className='font-semibold'>You can ask gemini questions from this element</p>
+      </Card>
+      <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
+        <Image
+          src="/services/explain.png"
+          alt="clerk auth"
+          width={400}
+          height={400}
+          className="cursor-pointer w-full h-52"
+        />
+        <p className='font-semibold'>When you click on explain button a explanation text is shown below gemini element</p>
       </Card>
     </div>
   )
