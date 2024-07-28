@@ -12,7 +12,17 @@ const updateDate = (date: any) => {
 
 export async function POST(req: NextRequest) {
   try {
-    const scores = await prisma.score.findMany()
+    // Fetch the request body
+    const reqBody = await req.json()
+
+    // Get the userPrompt from the request body
+    const { userPrompt, userId } = reqBody
+
+    const scores = await prisma.score.findMany({
+      where: {
+        userId: userId,
+      },
+    })
 
     const newData = []
 
@@ -63,7 +73,9 @@ export async function POST(req: NextRequest) {
             {
               text: `My phq-9 scores on dates ${labels.join(
                 ','
-              )} is the scores ${values.join(',')} provide answers to the following questions based on the data. It is a project so feel free to give me any guidance.`,
+              )} is the scores ${values.join(
+                ','
+              )} provide answers to the following questions based on the data. It is a project so feel free to give me any guidance.`,
             },
           ],
         },
@@ -72,12 +84,6 @@ export async function POST(req: NextRequest) {
         maxOutputTokens: 50,
       },
     })
-
-    // Fetch the request body
-    const reqBody = await req.json()
-
-    // Get the userPrompt from the request body
-    const { userPrompt } = reqBody
 
     // Send the user's message to the chat model
     const result = await chat.sendMessage(

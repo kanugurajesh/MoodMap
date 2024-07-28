@@ -13,6 +13,7 @@ import toast from 'react-hot-toast'
 import Image from 'next/image'
 import Markdown from 'react-markdown'
 import Loader from '@/components/Loader'
+import { useAuth } from '@clerk/nextjs'
 
 export default function ChatPage() {
   const [userImage, setUserImage] = useState<string>('')
@@ -21,6 +22,7 @@ export default function ChatPage() {
   const { user } = useUser()
   const chatRef = useRef<HTMLDivElement>(null)
   const chat = useSelector((state: RootState) => state.chat.messages)
+  const { userId } = useAuth()
 
   const dispatch = useAppDispatch()
 
@@ -45,6 +47,7 @@ export default function ChatPage() {
         },
         body: JSON.stringify({
           userPrompt: message,
+          userId: userId
         }),
       })
 
