@@ -10,73 +10,73 @@ export default function ServicesPage() {
     <div className="flex flex-wrap gap-10 items-center justify-center my-10">
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/phq.png"
+          src="/services/home.png"
           alt="phq"
           width={400}
           height={400}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>I have implemented an phq-9 test taker to take phq-9 assessment from the user</p>
+        <p className='font-semibold'>The home of the mental health application</p>
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/gemini-explain.png"
+          src="/services/auth.png"
           alt="gemini explain"
           width={400}
           height={400}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>Users can click on explain so that ai can explain the question to them</p>
+        <p className='font-semibold'>Implemented a very robust authentication in the application</p>
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/gemini-message.png"
+          src="/services/auth-home.png"
           alt="gemini message"
           width={400}
           height={200}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>Users can ask questions to the gemini model and get good feedback</p>
+        <p className='font-semibold'>After authentication user can change his data from the User button</p>
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/personalized-response.png"
+          src="/services/about.png"
           alt="personalized response"
           width={400}
           height={400}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>After taking the assessment the users are redirected to the response page where he will get a persnalized feedback on his health</p>
+        <p className='font-semibold'>This page tells the details about the project</p>
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/mental-track.png"
+          src="/services/services.png"
           alt="mental track"
           width={400}
           height={400}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>The graph shows the user mental health status on multiple dates</p>
+        <p className='font-semibold'>This page shows the services and features of the application</p>
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/complete-analysis.png"
+          src="/services/contact.png"
           alt="complete analysis"
           width={400}
           height={400}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>The gemini gives the response based on all the previous tests results</p>
+        <p className='font-semibold'>This form is used to contact in case of emergency</p>
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
-          src="/services/contact-form.png"
+          src="/services/doctor.png"
           alt="contact form"
           width={400}
           height={400}
           className="cursor-pointer w-full h-52"
         />
-        <p className='font-semibold'>This is an emergency form where users can ask help from people</p>
+        <p className='font-semibold'>This page can only be accessed by professionals who can track all the patients using the application</p>
       </Card>
       <Card className="w-[350px] h-[350px] flex flex-col gap-4 p-5">
         <Image
