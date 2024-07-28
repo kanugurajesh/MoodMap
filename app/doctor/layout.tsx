@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function RootLayout({
   children,
@@ -8,8 +9,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('admin');
+  const [password, setPassword] = useState('password');
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,6 +21,11 @@ export default function RootLayout({
       alert('Incorrect username or password');
     }
   };
+
+  useEffect(() => {
+    toast.dismiss()
+    toast.success('use default values')
+  }, [])
 
   if (!isLoggedIn) {
     return (
