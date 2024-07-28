@@ -92,6 +92,16 @@ const MobileNavbar = () => {
             <div className="w-0 h-1 group-hover:w-full bg-black transition-all ease-in-out duration-700"></div>
           </div>
           <div className="group">
+            <Link
+              href="/doctor"
+              className="hover:text-black transition-all ease-in-out duration-300"
+              onClick={() => setActiveMenu(false)}
+            >
+              Doctor
+            </Link>
+            <div className="w-0 h-1 group-hover:w-full bg-black transition-all ease-in-out duration-700"></div>
+          </div>
+          <div className="group">
             <SignedOut>
               <Link
                 href="/sign-up"

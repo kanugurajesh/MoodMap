@@ -57,11 +57,19 @@ const Navbar = () => {
               >
                 Services
               </Link>
+              <Link
+                href="/doctor"
+                onClick={() => setActiveTab(4)}
+                className="hover:text-blue-500 transition-all ease-in-out duration-300 hover:scale-105"
+              >
+                Doctor
+              </Link>
               <div
                 className={`absolute w-12 h-1 bg-blue-500 top-6 transition-all ease-in-out duration-300 ${
                   (activeTab == 1 && 'left-0') ||
                   (activeTab == 2 && 'left-[87px]') ||
-                  (activeTab == 3 && 'left-[185px]')
+                  (activeTab == 3 && 'left-[180px]') || 
+                  (activeTab == 4 && 'left-[275px]')
                 }`}
               ></div>
             </div>
