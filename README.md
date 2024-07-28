@@ -39,3 +39,21 @@ By bridging the gap between mental health needs and available resources, MoodMap
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/MoodMap.git
+   ```
+2. Change the directory
+   ```bash
+   cd MoodMap
+   ```
+3. Copy the environment variables
+   ```bash
+   cp .env.example .env.local
+   ```
+4. Add the environment variables
+5. Install the packages
+   ```bash
+   npm install
+   ```
+6. Run the project
+   ```bash
+   npm run dev
+   ```
