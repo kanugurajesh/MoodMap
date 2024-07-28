@@ -58,3 +58,47 @@ By bridging the gap between mental health needs and available resources, MoodMap
    ```bash
    npm run dev
    ```
+
+## Screenshots
+
+![Screenshot 2024-07-28 101039](https://github.com/user-attachments/assets/460a129b-6a60-45ba-8209-dd446fe1e6f7)
+
+![Screenshot 2024-07-28 101043](https://github.com/user-attachments/assets/78e3c8a5-b4c6-47c2-b89e-2e641d5da333)
+
+![Screenshot 2024-07-28 101050](https://github.com/user-attachments/assets/75533a44-381e-4b87-a7b7-ab291cfc3164)
+
+![Screenshot 2024-07-28 101056](https://github.com/user-attachments/assets/b27fa325-d76a-4d47-8b9f-383b44f8c195)
+
+![Screenshot 2024-07-28 101106](https://github.com/user-attachments/assets/9c75869f-59a9-45c6-b0cc-263c52eff60b)
+
+![Screenshot 2024-07-28 101117](https://github.com/user-attachments/assets/f4ba3870-a3f7-4203-86c8-21ed9e1682b9)
+
+![Screenshot 2024-07-28 101150](https://github.com/user-attachments/assets/45e40a83-6189-42bd-97a8-29be78b63476)
+
+![Screenshot 2024-07-28 101154](https://github.com/user-attachments/assets/ec0ac450-3c46-4562-a7de-01eaa39d7e3a)
+
+![Screenshot 2024-07-28 101203](https://github.com/user-attachments/assets/a8d84e9d-14ac-4910-a8fa-7b517282b073)
+
+![Screenshot 2024-07-28 101211](https://github.com/user-attachments/assets/dd8473e2-c775-4c38-a43d-7a51167e9d92)
+
+![Screenshot 2024-07-28 101216](https://github.com/user-attachments/assets/0fea10f2-ce76-4b28-9b31-67e1c799ed0f)
+
+![Screenshot 2024-07-28 101222](https://github.com/user-attachments/assets/a5a02bb3-78d9-465e-966f-8b6824a44ff7)
+
+![Screenshot 2024-07-28 101225](https://github.com/user-attachments/assets/feeaca4b-5cc1-42a8-bbfd-5a4be92d83fe)
+
+![Screenshot 2024-07-28 101230](https://github.com/user-attachments/assets/d947ce8e-4ebb-4bca-be6e-1baf3b4af7d2)
+
+![Screenshot 2024-07-28 101235](https://github.com/user-attachments/assets/257bcac7-577b-4746-9ced-abac17c5415d)
+
+![Screenshot 2024-07-28 101254](https://github.com/user-attachments/assets/46949d6f-7194-40eb-97f9-91cc5e20b07b)
+
+![Screenshot 2024-07-28 101445](https://github.com/user-attachments/assets/8c239fa6-56fa-4959-8151-b0df3b39bbae)
+
+![Screenshot 2024-07-28 101500](https://github.com/user-attachments/assets/a32e8689-8865-473f-8c66-041c0b9bb890)
+
+![Screenshot 2024-07-28 101509](https://github.com/user-attachments/assets/c6804bab-923e-4d29-a979-e121148bc261)
+
+   
+## Demo
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/1lrcd8Nv_fw/0.jpg)](https://www.youtube.com/watch?v=1lrcd8Nv_fw)
