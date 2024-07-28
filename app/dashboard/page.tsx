@@ -1,4 +1,4 @@
-// page.js this is the entry point of application
+// app/doctor/page.tsx (or page.js, depending on your setup)
 'use client'
 
 import dynamic from 'next/dynamic'
@@ -22,7 +22,6 @@ const updateDate = (date: any) => {
 }
 
 const LineChart = () => {
-  
   const [labels, setLabels] = useState<string[]>([])
   const [values, setValues] = useState<number[]>([])
   const [response, setResponse] = useState<string>('')
@@ -40,14 +39,13 @@ const LineChart = () => {
     })
   }
 
-  // The below function set's the resposne
+  // The below function set's the response
   const slowResponse = (response: string) => {
     setResponse(response)
   }
 
   useEffect(() => {
     const fetchData = async () => {
-
       toast.dismiss()
       toast.loading('Loading data...')
 
@@ -76,7 +74,7 @@ const LineChart = () => {
         newData.push([updateDate(data[i].date), data[i].value])
       }
 
-      const finalMap = {}
+      const finalMap: { [key: string]: number } = {}
 
       for (let i = 0; i < newData.length; i++) {
         let sum = newData[i][1]
@@ -89,7 +87,6 @@ const LineChart = () => {
               count++
             }
           }
-          // @ts-ignore
           finalMap[newData[i][0]] = sum / count
         }
       }

@@ -16,7 +16,7 @@ interface userI {
   userId: string
 }
 
-const page = () => {
+const Page = () => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
@@ -37,6 +37,7 @@ const page = () => {
             // @ts-ignore
             href={`/doctor/${users[0]?.userId}`}
             className="mt-10 flex flex-wrap gap-4"
+            key={uuid()}
           >
             <div
               key={uuid()}
@@ -66,4 +67,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
