@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+
 // use uuid to generate unique ids
 import { v4 as uuid } from 'uuid'
 import Link from 'next/link'
@@ -27,15 +28,13 @@ const page = () => {
     sendRequest()
   }, [])
 
-  useEffect(() => {
-  }, [users])
-
   return (
     <main className="flex flex-col gap-2 justify-center items-center">
       <h1 className="font-bold text-2xl mt-5">Check your patients</h1>
       {users.length > 0 ? (
         users.map((user: userI) => (
           <Link
+            // @ts-ignore
             href={`/doctor/${users[0]?.userId}`}
             className="mt-10 flex flex-wrap gap-4"
           >

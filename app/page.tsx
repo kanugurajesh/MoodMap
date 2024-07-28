@@ -1,4 +1,5 @@
-'use client'
+"use client"
+
 import { CarouselComponent } from '@/components/Carousal'
 import Link from 'next/link'
 import { useAuth } from '@clerk/nextjs'
@@ -46,9 +47,7 @@ export default function Home() {
         <div className="overflow-hidden">
           <h1 className="font-medium text-xl max-laptop:text-lg animate-moveDown transition-all ease-in-out duration-700 max-w-lg max-laptop:max-w-sm">
             <p>
-              Monitor your mental health using our tracker with the PHQ-9
-              questionnaire to understand and manage your well-being
-              effectively.
+              An application to help psychiatrists to monitor your mental health and it also helps to acknowledge your mental well being
             </p>
           </h1>
         </div>
