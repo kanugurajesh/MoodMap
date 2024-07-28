@@ -24,6 +24,7 @@ export default function RootLayout({
     return (
       <div className="flex justify-center items-center h-screen">
         <form onSubmit={handleLogin} className="bg-white p-6 rounded shadow-md">
+          <h1 className='font-black text-black text-xl text-center mb-6'>Doctor Login</h1>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
               Username
