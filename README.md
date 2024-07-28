@@ -49,11 +49,12 @@ By bridging the gap between mental health needs and available resources, MoodMap
    cp .env.example .env.local
    ```
 4. Add the environment variables
-5. Install the packages
+   
+6. Install the packages
    ```bash
    npm install
    ```
-6. Run the project
+7. Run the project
    ```bash
    npm run dev
    ```
