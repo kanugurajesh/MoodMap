@@ -30,10 +30,10 @@ const Navbar = () => {
               onClick={() => setActiveTab(1)}
               className="flex items-center font-black text-2xl hover:scale-105 transition-all ease-in-out duration-300"
             >
-              <h1 className="text-blue-500 text-5xl max-laptop:text-5xl mr-1">
+              <h1 className="text-blue-500 text-5xl max-laptop:text-5xl">
                 M
               </h1>
-              <h1 className="text-4xl max-laptop:text-3xl">ood<span className='text-blue-500 text-5xl'>M</span>ap</h1>
+              <h1 className="text-4xl max-laptop:text-3xl">oodmap</h1>
             </Link>
             <div className="flex gap-10 font-bold relative">
               <Link
